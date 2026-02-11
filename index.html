@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Planning System - Onboarding Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-active { background: #4f46e5; color: white; transform: scale(1.05); }
+    .tab-inactive { background: white; color: #4f46e5; }
+    .tab-inactive:hover { background: #eef2ff; }
+    .phase-content { display: none; }
+    .phase-content.active { display: block; }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-indigo-900 mb-2">🚀 Sales Planning System</h1>
+      <p class="text-lg text-indigo-600">Your complete guide to weekly planning & visit logging</p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8" id="tabs">
+      <button onclick="showPhase('overview')" class="tab-btn tab-active px-4 py-2 rounded-lg font-medium transition-all text-sm shadow" data-phase="overview">🎯 System Overview</button>
+      <button onclick="showPhase('friday')" class="tab-btn tab-inactive px-4 py-2 rounded-lg font-medium transition-all text-sm shadow" data-phase="friday">📅 Friday Planning</button>
+      <button onclick="showPhase('weekend')" class="tab-btn tab-inactive px-4 py-2 rounded-lg font-medium transition-all text-sm shadow" data-phase="weekend">✏️ Weekend Review</button>
+      <button onclick="showPhase('daily')" class="tab-btn tab-inactive px-4 py-2 rounded-lg font-medium transition-all text-sm shadow" data-phase="daily">📍 Daily Execution</button>
+      <button onclick="showPhase('urgent')" class="tab-btn tab-inactive px-4 py-2 rounded-lg font-medium transition-all text-sm shadow" data-phase="urgent">⚠️ Urgent Replanning</button>
+      <button onclick="showPhase('rules')" class="tab-btn tab-inactive px-4 py-2 rounded-lg font-medium transition-all text-sm shadow" data-phase="rules">📋 Important Rules</button>
+      <button onclick="showPhase('tips')" class="tab-btn tab-inactive px-4 py-2 rounded-lg font-medium transition-all text-sm shadow" data-phase="tips">💡 Tips</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+
+      <!-- OVERVIEW -->
+      <div id="phase-overview" class="phase-content active">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">🎯 System Overview</h2>
+        <p class="text-gray-500 mb-6">Your Weekly Sales Planning & Visit Logging System</p>
+
+        <!-- Weekly Cycle -->
+        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mb-8">
+          <h3 class="text-lg font-semibold text-indigo-800 mb-4">📆 Your Weekly Cycle</h3>
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <div class="text-center">
+              <div class="bg-purple-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mb-2 shadow-lg">📋</div>
+              <div class="font-semibold text-gray-700">Friday</div>
+              <div class="text-sm text-gray-500">Plan Generated</div>
+            </div>
+            <div class="text-3xl text-gray-300">→</div>
+            <div class="text-center">
+              <div class="bg-indigo-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mb-2 shadow-lg">✏️</div>
+              <div class="font-semibold text-gray-700">Weekend</div>
+              <div class="text-sm text-gray-500">Review & Adjust</div>
+            </div>
+            <div class="text-3xl text-gray-300">→</div>
+            <div class="text-center">
+              <div class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mb-2 shadow-lg">🚗</div>
+              <div class="font-semibold text-gray-700">Mon-Fri</div>
+              <div class="text-sm text-gray-500">Visit & Log</div>
+            </div>
+            <div class="text-3xl text-gray-300">→</div>
+            <div class="text-center">
+              <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mb-2 shadow-lg">✅</div>
+              <div class="font-semibold text-gray-700">Daily</div>
+              <div class="text-sm text-gray-500">Track Progress</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Components -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-blue-50 rounded-xl p-5 border-l-4 border-blue-500">
+            <h4 class="font-bold text-blue-800 mb-2">📊 Weekly Plan Sheet</h4>
+            <p class="text-blue-700 text-sm">Your personalized route for the week. Shows which stores to visit each day, optimized for minimum travel time.</p>
+          </div>
+          <div class="bg-green-50 rounded-xl p-5 border-l-4 border-green-500">
+            <h4 class="font-bold text-green-800 mb-2">💬 Slack Channel</h4>
+            <p class="text-green-700 text-sm">Log your visits in #franchise-supermarkets. Just post a simple message and the system handles everything!</p>
+          </div>
+          <div class="bg-purple-50 rounded-xl p-5 border-l-4 border-purple-500">
+            <h4 class="font-bold text-purple-800 mb-2">🗄️ Odoo CRM</h4>
+            <p class="text-purple-700 text-sm">All your visit history is automatically saved. Next visit dates, notes, and visit logs are all tracked.</p>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="bg-gray-50 rounded-xl p-6 mb-8">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">📈 What You'll Have Each Week</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center p-4 bg-white rounded-lg shadow">
+              <div class="text-3xl font-bold text-indigo-600">~40</div>
+              <div class="text-sm text-gray-500">Core Visits</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg shadow">
+              <div class="text-3xl font-bold text-green-600">~15</div>
+              <div class="text-sm text-gray-500">Buffer Visits</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg shadow">
+              <div class="text-3xl font-bold text-blue-600">4-5</div>
+              <div class="text-sm text-gray-500">Work Days</div>
+            </div>
+            <div class="text-center p-4 bg-white rounded-lg shadow">
+              <div class="text-3xl font-bold text-purple-600">8-10</div>
+              <div class="text-sm text-gray-500">Visits/Day</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- All Features -->
+        <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6">
+          <h3 class="text-lg font-semibold text-green-800 mb-4">✨ System Features</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">📝</span><span class="text-gray-700 text-sm">Log multiple stores in one Slack message</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">🎯</span><span class="text-gray-700 text-sm">One-store-day: Build route around a priority store</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">📧</span><span class="text-gray-700 text-sm">Email notifications for any errors</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">🔄</span><span class="text-gray-700 text-sm">Smart chain matching (AD = DELHAIZE)</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">🏖️</span><span class="text-gray-700 text-sm">Vacation/days-off calendar support</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">📅</span><span class="text-gray-700 text-sm">Month-based planning with last-week guarantee</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">⚠️</span><span class="text-gray-700 text-sm">Urgent replan for THIS WEEK visits</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">🚫</span><span class="text-gray-700 text-sm">Monday blocking (1st & 3rd Monday)</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">✏️</span><span class="text-gray-700 text-sm">Weekend review and manual adjustments</span></div>
+            <div class="flex items-center gap-2 bg-white rounded-lg p-3 shadow-sm"><span class="text-xl">🗺️</span><span class="text-gray-700 text-sm">Region-based route optimization</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRIDAY PLANNING -->
+      <div id="phase-friday" class="phase-content">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">📅 Friday Planning</h2>
+        <p class="text-gray-500 mb-6">How your weekly route is created</p>
+
+        <!-- Timeline -->
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-purple-800 mb-4">🤖 Automatic Planning Process</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg flex-shrink-0">⚡</div>
+              <div><div class="text-xs text-purple-600 font-semibold">Friday Evening</div><div class="font-semibold text-gray-800">System Runs Automatically</div><div class="text-sm text-gray-500">No action needed from you!</div></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg flex-shrink-0">📦</div>
+              <div><div class="text-xs text-purple-600 font-semibold">Step 1</div><div class="font-semibold text-gray-800">Collects All Your Stores</div><div class="text-sm text-gray-500">Gets your complete store database</div></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg flex-shrink-0">📅</div>
+              <div><div class="text-xs text-purple-600 font-semibold">Step 2</div><div class="font-semibold text-gray-800">Checks Due Dates</div><div class="text-sm text-gray-500">Finds overdue + scheduled + month-due stores</div></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg flex-shrink-0">🗺️</div>
+              <div><div class="text-xs text-purple-600 font-semibold">Step 3</div><div class="font-semibold text-gray-800">Groups by Region</div><div class="text-sm text-gray-500">Clusters stores by postal code area</div></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg flex-shrink-0">✨</div>
+              <div><div class="text-xs text-purple-600 font-semibold">Step 4</div><div class="font-semibold text-gray-800">Generates Your Plan</div><div class="text-sm text-gray-500">Creates weekly_plan_[YourName] sheet</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Priority -->
+        <div class="bg-orange-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-orange-800 mb-4">🎯 How Stores Are Prioritized</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm"><span class="text-2xl">1️⃣</span><div><span class="font-semibold text-red-600">Overdue Visits</span><span class="text-gray-500 text-sm ml-2">— Stores past their scheduled date</span></div></div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm"><span class="text-2xl">2️⃣</span><div><span class="font-semibold text-orange-600">Specific Date This Week</span><span class="text-gray-500 text-sm ml-2">— Exact dates falling this week</span></div></div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm"><span class="text-2xl">3️⃣</span><div><span class="font-semibold text-yellow-600">Month-Due Stores</span><span class="text-gray-500 text-sm ml-2">— "February" gets planned in February</span></div></div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm"><span class="text-2xl">4️⃣</span><div><span class="font-semibold text-green-600">Same Region</span><span class="text-gray-500 text-sm ml-2">— Clusters stores by postal code</span></div></div>
+            <div class="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm"><span class="text-2xl">5️⃣</span><div><span class="font-semibold text-blue-600">New vs Existing Balance</span><span class="text-gray-500 text-sm ml-2">— Mix of new and existing clients</span></div></div>
+          </div>
+        </div>
+
+        <!-- Month Planning -->
+        <div class="bg-blue-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-blue-800 mb-4">📅 Month-Based Planning</h3>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-gray-700 mb-3">When you set next visit to just a month name (e.g., "february"):</p>
+            <ol class="space-y-2 text-sm">
+              <li class="flex items-start gap-2"><span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs flex-shrink-0">1</span><span>Plans the store during that month based on region priority</span></li>
+              <li class="flex items-start gap-2"><span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs flex-shrink-0">2</span><span>If not planned by <strong>last week of the month</strong>, it gets GUARANTEED</span></li>
+              <li class="flex items-start gap-2"><span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs flex-shrink-0">3</span><span>Last week: ALL remaining month-due stores added, even if over capacity</span></li>
+            </ol>
+          </div>
+          <div class="bg-green-100 rounded-lg p-3 border-l-4 border-green-500">
+            <p class="text-green-800 text-sm"><strong>✅ Result:</strong> You'll never miss a store scheduled for a specific month!</p>
+          </div>
+        </div>
+
+        <!-- Monday Blocking -->
+        <div class="bg-yellow-50 rounded-xl p-6">
+          <h3 class="text-lg font-semibold text-yellow-800 mb-4">🚫 Monday Blocking</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="font-semibold text-red-600 mb-1">❌ Blocked Mondays</div>
+              <ul class="text-sm text-gray-600 space-y-1"><li>• 1st Monday of each month</li><li>• 3rd Monday of each month</li></ul>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <div class="font-semibold text-green-600 mb-1">✅ Normal Mondays</div>
+              <ul class="text-sm text-gray-600 space-y-1"><li>• 2nd Monday of each month</li><li>• 4th Monday of each month</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEKEND REVIEW -->
+      <div id="phase-weekend" class="phase-content">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">✏️ Weekend Review</h2>
+        <p class="text-gray-500 mb-6">Review and adjust your plan</p>
+
+        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-indigo-800 mb-4">✏️ Your Time to Review & Adjust</h3>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-gray-700">After the plan is generated on <strong>Friday evening</strong>, you have the entire <strong>weekend (Saturday & Sunday)</strong> to review and make adjustments!</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow text-center"><div class="text-3xl mb-2">📋</div><div class="font-semibold text-gray-800">Review Plan</div><p class="text-xs text-gray-500">Check your weekly_plan sheet</p></div>
+            <div class="bg-white rounded-lg p-4 shadow text-center"><div class="text-3xl mb-2">✏️</div><div class="font-semibold text-gray-800">Make Changes</div><p class="text-xs text-gray-500">Add, remove, or move stores</p></div>
+            <div class="bg-white rounded-lg p-4 shadow text-center"><div class="text-3xl mb-2">✅</div><div class="font-semibold text-gray-800">Ready Monday</div><p class="text-xs text-gray-500">Start with your adjusted plan</p></div>
+          </div>
+        </div>
+
+        <!-- What You Can Change -->
+        <div class="bg-green-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-green-800 mb-4">🔧 What You Can Adjust</h3>
+          <div class="space-y-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm"><div class="flex items-center gap-2 mb-2"><span class="text-xl">➕</span><span class="font-semibold text-gray-800">Add Stores</span></div><p class="text-sm text-gray-600">Add any store to a specific day. Just add a new row with store name and planned_date.</p></div>
+            <div class="bg-white rounded-lg p-4 shadow-sm"><div class="flex items-center gap-2 mb-2"><span class="text-xl">➖</span><span class="font-semibold text-gray-800">Remove Stores</span></div><p class="text-sm text-gray-600">Remove stores you don't want to visit. Delete the row or clear the planned_date.</p></div>
+            <div class="bg-white rounded-lg p-4 shadow-sm"><div class="flex items-center gap-2 mb-2"><span class="text-xl">🔄</span><span class="font-semibold text-gray-800">Move Between Days</span></div><p class="text-sm text-gray-600">Change the planned_date to move a store to a different day.</p></div>
+          </div>
+        </div>
+
+        <!-- One Store Day -->
+        <div class="bg-purple-50 rounded-xl p-6">
+          <h3 class="text-lg font-semibold text-purple-800 mb-4">🎯 One-Store-Day Feature</h3>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-gray-700 mb-3"><strong>Special scenario:</strong> You have ONE important store you MUST visit on a specific day, and want the system to build the rest of the route around it.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3"><div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</div><div><div class="font-semibold text-gray-800">Clear the day</div><p class="text-sm text-gray-600">Remove all other stores from that day</p></div></div>
+            <div class="flex items-start gap-3"><div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</div><div><div class="font-semibold text-gray-800">Keep your priority store</div><p class="text-sm text-gray-600">Leave only the ONE store you must visit</p></div></div>
+            <div class="flex items-start gap-3"><div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</div><div><div class="font-semibold text-gray-800">System rebuilds the route</div><p class="text-sm text-gray-600">The planner will add nearby stores to fill your day!</p></div></div>
+          </div>
+          <div class="bg-purple-100 rounded-lg p-3 mt-4 border-l-4 border-purple-500">
+            <p class="text-purple-800 text-sm"><strong>💡 Example:</strong> You have a meeting at DELHAIZE BRUGES at 10am. Keep only that store, and the system will add other stores in the Bruges area!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAILY EXECUTION -->
+      <div id="phase-daily" class="phase-content">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">📍 Daily Execution</h2>
+        <p class="text-gray-500 mb-6">Following your route & logging visits</p>
+
+        <!-- Morning Routine -->
+        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-orange-800 mb-4">☀️ Your Daily Routine</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl mb-2">🌅</div><h4 class="font-semibold text-gray-800">Morning</h4><p class="text-sm text-gray-600">You receive an email with daily plan and stores names. Check your weekly_plan sheet for today's visits if needed.</p></div>
+            <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl mb-2">🚗</div><h4 class="font-semibold text-gray-800">During Day</h4><p class="text-sm text-gray-600">Follow the route. Log each visit in Slack.</p></div>
+            <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl mb-2">🌆</div><h4 class="font-semibold text-gray-800">End of Day</h4><p class="text-sm text-gray-600">Check all visits logged. System updates automatically.</p></div>
+          </div>
+        </div>
+
+        <!-- Slack Format -->
+        <div class="bg-green-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-green-800 mb-4">💬 How to Log Visits in Slack</h3>
+          <p class="text-gray-600 mb-4">Post in <strong>#franchise-supermarkets</strong> channel:</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-700 mb-2">📝 Standard Format</h4>
+              <div class="bg-gray-900 text-green-400 rounded-lg p-4 font-mono text-sm">
+                <div>Client: PROXY MEULEBEKE</div>
+                <div>next: february</div>
+                <div>products_discussed: Wondr shampoo</div>
+                <div>refill: yes</div>
+                <div>note: Manager happy with sales</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-700 mb-2">⚡ Quick Format</h4>
+              <div class="bg-gray-900 text-green-400 rounded-lg p-4 font-mono text-sm">
+                <div>Client: DELHAIZE TIELT</div>
+                <div>next: 2026-03-15</div>
+                <div>note: Restocked display</div>
+              </div>
+              <p class="text-sm text-gray-500 mt-2">Only client and note are required!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multiple Stores -->
+        <div class="bg-purple-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-purple-800 mb-4">🏪 Logging Multiple Stores</h3>
+          <div class="bg-gray-900 text-green-400 rounded-lg p-4 font-mono text-sm">
+            <div>Client: PROXY MEULEBEKE</div>
+            <div>next: march</div>
+            <div>note: All good</div>
+            <div class="my-2"></div>
+            <div>Client: DELHAIZE TIELT</div>
+            <div>next: april</div>
+            <div>note: New manager starting</div>
+          </div>
+          <p class="text-sm text-purple-600 mt-3">✨ System processes each store separately!</p>
+        </div>
+
+        <!-- Date Formats -->
+        <div class="bg-blue-50 rounded-xl p-6">
+          <h3 class="text-lg font-semibold text-blue-800 mb-4">📅 Accepted Date Formats</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm"><div class="font-mono text-blue-600 font-semibold">2026-03-15</div><div class="text-xs text-gray-500">ISO Format</div></div>
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm"><div class="font-mono text-blue-600 font-semibold">15/03/2026</div><div class="text-xs text-gray-500">European</div></div>
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm"><div class="font-mono text-blue-600 font-semibold">march</div><div class="text-xs text-gray-500">Month name</div></div>
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm"><div class="font-mono text-blue-600 font-semibold">maart</div><div class="text-xs text-gray-500">Dutch month</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- URGENT REPLANNING -->
+      <div id="phase-urgent" class="phase-content">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">⚠️ Urgent Replanning</h2>
+        <p class="text-gray-500 mb-6">When you need to visit a store THIS week</p>
+
+        <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-red-800 mb-4">⚠️ When Does Urgent Replan Trigger?</h3>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-gray-700">When you set <span class="font-mono bg-yellow-100 px-2 py-1 rounded">next:</span> to a date that falls <span class="font-bold text-red-600">THIS WEEK</span>, the system automatically adds it to your plan!</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-green-100 rounded-lg p-4 border-2 border-green-500">
+              <h4 class="font-semibold text-green-800 mb-2">✅ Triggers Urgent</h4>
+              <div class="bg-gray-900 text-green-400 rounded p-3 font-mono text-sm">
+                <div>Client: PROXY MEULEBEKE</div>
+                <div>next: 29/01/2026</div>
+                <div>note: Come back tomorrow!</div>
+              </div>
+              <p class="text-sm text-green-700 mt-2">Tomorrow is THIS WEEK → Added to plan!</p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-4 border-2 border-gray-300">
+              <h4 class="font-semibold text-gray-700 mb-2">📅 Normal (No Urgent)</h4>
+              <div class="bg-gray-900 text-green-400 rounded p-3 font-mono text-sm">
+                <div>Client: DELHAIZE TIELT</div>
+                <div>next: march</div>
+                <div>note: See you next month</div>
+              </div>
+              <p class="text-sm text-gray-600 mt-2">"March" is not this week → Normal</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example -->
+        <div class="bg-yellow-50 rounded-xl p-6">
+          <h3 class="text-lg font-semibold text-yellow-800 mb-4">📖 Real Example</h3>
+          <div class="space-y-4">
+            <div class="bg-white rounded-lg p-4 shadow"><div class="font-semibold text-gray-700 mb-2">Situation:</div><p class="text-gray-600">It's Tuesday. Manager says "Can you come back Thursday? Big shipment coming."</p></div>
+            <div class="bg-white rounded-lg p-4 shadow"><div class="font-semibold text-gray-700 mb-2">You log:</div><div class="bg-gray-900 text-green-400 rounded p-3 font-mono text-sm"><div>Client: PROXY MEULEBEKE</div><div>next: thursday</div><div>note: Big shipment, restock display</div></div></div>
+            <div class="bg-green-100 rounded-lg p-4 shadow border-2 border-green-500"><div class="font-semibold text-green-700 mb-2">✨ Result:</div><ul class="text-green-700 space-y-1"><li>✅ Visit logged to Odoo</li><li>✅ System detects "Thursday" = THIS WEEK</li><li>✅ PROXY MEULEBEKE added to Thursday's plan!</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RULES -->
+      <div id="phase-rules" class="phase-content">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">📋 Important Rules</h2>
+        <p class="text-gray-500 mb-6">Key guidelines for the system</p>
+
+        <!-- Store Name Consistency -->
+        <div class="bg-red-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-red-800 mb-4">⚠️ Store Name Consistency</h3>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-gray-700">Names need to be consistent between <strong>Slack</strong>, <strong>Excel</strong>, and <strong>Odoo</strong>.</p>
+          </div>
+          <div class="bg-white rounded-lg p-3 shadow-sm mb-3">
+            <div class="text-green-600 font-semibold mb-1">✅ The matching algorithm searches by:</div>
+            <ul class="text-sm text-gray-600 space-y-1 ml-4">
+              <li>• <strong>Chain name:</strong> PROXY, DELHAIZE, CARREFOUR</li>
+              <li>• <strong>Location:</strong> STADEN, NINOVE, BRUGES</li>
+              <li>• <strong>Extra words:</strong> With typo tolerance</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-100 rounded-lg p-3 border-l-4 border-yellow-500">
+            <p class="text-yellow-800 text-sm"><strong>💡 Tip:</strong> Copy the exact store name from your Excel sheet!</p>
+          </div>
+        </div>
+
+        <!-- Chain Matching -->
+        <div class="bg-blue-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-blue-800 mb-4">🔄 Smart Chain Matching</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm"><div class="font-semibold text-gray-800 mb-2">AD = DELHAIZE</div><div class="text-sm text-gray-500">"AD HIPPODROOM" matches "DELHAIZE HIPPODROOM"</div></div>
+            <div class="bg-white rounded-lg p-4 shadow-sm"><div class="font-semibold text-gray-800 mb-2">GB = CARREFOUR</div><div class="text-sm text-gray-500">Historical alias for Carrefour stores</div></div>
+          </div>
+        </div>
+
+        <!-- Next Visit Date -->
+        <div class="bg-orange-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-orange-800 mb-4">📅 Next Visit Date - CRITICAL</h3>
+          <div class="bg-white rounded-lg p-4 mb-4 border-2 border-orange-300">
+            <p class="text-gray-700 text-lg"><strong>If you don't specify next_visit_date, the store will NOT be automatically replanned!</strong></p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-green-100 rounded-lg p-4"><div class="font-semibold text-green-800 mb-2">✅ With next date</div><div class="bg-gray-900 text-green-400 rounded p-2 font-mono text-xs"><div>Client: PROXY</div><div>next: march</div></div><p class="text-sm text-green-700 mt-2">→ Will be planned in March</p></div>
+            <div class="bg-red-100 rounded-lg p-4"><div class="font-semibold text-red-800 mb-2">❌ Without next date</div><div class="bg-gray-900 text-green-400 rounded p-2 font-mono text-xs"><div>Client: PROXY</div><div>note: Good visit</div></div><p class="text-sm text-red-700 mt-2">→ Will NOT be replanned</p></div>
+          </div>
+        </div>
+
+        <!-- Days Off -->
+        <div class="bg-purple-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-purple-800 mb-4">🏖️ Vacations & Days Off</h3>
+          <p class="text-gray-600 mb-4">Add your non-working days to the <strong>days_off</strong> sheet:</p>
+          <table class="w-full text-sm bg-white rounded-lg overflow-hidden">
+            <thead class="bg-purple-200"><tr><th class="p-2 text-left">name</th><th class="p-2 text-left">date</th><th class="p-2 text-left">reason</th></tr></thead>
+            <tbody><tr class="border-b"><td class="p-2">Joren</td><td class="p-2 font-mono">2026-04-25</td><td class="p-2">Vacation</td></tr></tbody>
+          </table>
+        </div>
+
+        <!-- Errors -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">📧 Error Notifications</h3>
+          <p class="text-gray-600">If something goes wrong, you'll receive an email. All errors are also in the <strong>errors</strong> sheet.</p>
+        </div>
+      </div>
+
+      <!-- TIPS -->
+      <div id="phase-tips" class="phase-content">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">💡 Tips & Best Practices</h2>
+        <p class="text-gray-500 mb-6">Get the most out of the system</p>
+
+        <!-- Best Practices -->
+        <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-green-800 mb-4">✨ Best Practices</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg p-4 shadow-sm flex gap-3"><span class="text-2xl">📝</span><div><h4 class="font-semibold text-gray-800">Log Immediately</h4><p class="text-sm text-gray-600">Log visits right after leaving the store</p></div></div>
+            <div class="bg-white rounded-lg p-4 shadow-sm flex gap-3"><span class="text-2xl">📅</span><div><h4 class="font-semibold text-gray-800">Use Specific Dates</h4><p class="text-sm text-gray-600">When possible, use exact dates</p></div></div>
+            <div class="bg-white rounded-lg p-4 shadow-sm flex gap-3"><span class="text-2xl">📋</span><div><h4 class="font-semibold text-gray-800">Check Plan Daily</h4><p class="text-sm text-gray-600">Review your weekly_plan each morning</p></div></div>
+            <div class="bg-white rounded-lg p-4 shadow-sm flex gap-3"><span class="text-2xl">✏️</span><div><h4 class="font-semibold text-gray-800">Weekend Review</h4><p class="text-sm text-gray-600">Use Sat/Sun to review and adjust</p></div></div>
+          </div>
+        </div>
+
+        <!-- Common Mistakes -->
+        <div class="bg-red-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-red-800 mb-4">❌ Common Mistakes</h3>
+          <div class="space-y-3">
+            <div class="bg-white rounded-lg p-3 shadow-sm grid md:grid-cols-2 gap-2">
+              <div class="flex items-center gap-2"><span class="text-red-500">❌</span><span class="text-gray-600">Forgetting to log visits</span></div>
+              <div class="flex items-center gap-2"><span class="text-green-500">✅</span><span class="text-gray-700 font-medium">Log every visit!</span></div>
+            </div>
+            <div class="bg-white rounded-lg p-3 shadow-sm grid md:grid-cols-2 gap-2">
+              <div class="flex items-center gap-2"><span class="text-red-500">❌</span><span class="text-gray-600">Not specifying next_visit_date</span></div>
+              <div class="flex items-center gap-2"><span class="text-green-500">✅</span><span class="text-gray-700 font-medium">Always include next:</span></div>
+            </div>
+            <div class="bg-white rounded-lg p-3 shadow-sm grid md:grid-cols-2 gap-2">
+              <div class="flex items-center gap-2"><span class="text-red-500">❌</span><span class="text-gray-600">Multiple stores without "Client:"</span></div>
+              <div class="flex items-center gap-2"><span class="text-green-500">✅</span><span class="text-gray-700 font-medium">Start each with "Client:"</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Flow -->
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
+          <h3 class="text-lg font-semibold text-blue-800 mb-4">🔄 Complete Weekly Flow</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-4 bg-white rounded-lg p-3 shadow-sm"><div class="bg-indigo-500 text-white rounded px-3 py-1 text-sm font-semibold min-w-24 text-center">Friday</div><div class="text-gray-700">🤖 System generates your weekly plan</div></div>
+            <div class="flex items-center gap-4 bg-white rounded-lg p-3 shadow-sm"><div class="bg-indigo-500 text-white rounded px-3 py-1 text-sm font-semibold min-w-24 text-center">Sat-Sun</div><div class="text-gray-700">✏️ Review plan, make adjustments</div></div>
+            <div class="flex items-center gap-4 bg-white rounded-lg p-3 shadow-sm"><div class="bg-indigo-500 text-white rounded px-3 py-1 text-sm font-semibold min-w-24 text-center">Mon-Fri</div><div class="text-gray-700">🚗 Visit stores, log in Slack</div></div>
+            <div class="flex items-center gap-4 bg-white rounded-lg p-3 shadow-sm"><div class="bg-indigo-500 text-white rounded px-3 py-1 text-sm font-semibold min-w-24 text-center">If Urgent</div><div class="text-gray-700">⚠️ Log with THIS WEEK date → auto-added</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-6 text-gray-500 text-sm">
+      Sales Planning System v2.0 • Built with ❤️ for the sales team
+    </div>
+  </div>
+
+  <script>
+    function showPhase(phase) {
+      // Hide all phases
+      document.querySelectorAll('.phase-content').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      // Show selected phase
+      document.getElementById('phase-' + phase).classList.add('active');
+
+      // Update tab styles
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.dataset.phase === phase) {
+          btn.classList.remove('tab-inactive');
+          btn.classList.add('tab-active');
+        } else {
+          btn.classList.remove('tab-active');
+          btn.classList.add('tab-inactive');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
