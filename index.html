@@ -34,12 +34,12 @@
 
     <!-- Content Area -->
     <div class="bg-white rounded-2xl shadow-xl p-8">
-
+      
       <!-- OVERVIEW -->
       <div id="phase-overview" class="phase-content active">
         <h2 class="text-2xl font-bold text-gray-800 mb-2">🎯 System Overview</h2>
         <p class="text-gray-500 mb-6">Your Weekly Sales Planning & Visit Logging System</p>
-
+        
         <!-- Weekly Cycle -->
         <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mb-8">
           <h3 class="text-lg font-semibold text-indigo-800 mb-4">📆 Your Weekly Cycle</h3>
@@ -131,7 +131,7 @@
       <div id="phase-friday" class="phase-content">
         <h2 class="text-2xl font-bold text-gray-800 mb-2">📅 Friday Planning</h2>
         <p class="text-gray-500 mb-6">How your weekly route is created</p>
-
+        
         <!-- Timeline -->
         <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-purple-800 mb-4">🤖 Automatic Planning Process</h3>
@@ -207,7 +207,7 @@
       <div id="phase-weekend" class="phase-content">
         <h2 class="text-2xl font-bold text-gray-800 mb-2">✏️ Weekend Review</h2>
         <p class="text-gray-500 mb-6">Review and adjust your plan</p>
-
+        
         <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-indigo-800 mb-4">✏️ Your Time to Review & Adjust</h3>
           <div class="bg-white rounded-lg p-4 mb-4">
@@ -251,12 +251,12 @@
       <div id="phase-daily" class="phase-content">
         <h2 class="text-2xl font-bold text-gray-800 mb-2">📍 Daily Execution</h2>
         <p class="text-gray-500 mb-6">Following your route & logging visits</p>
-
+        
         <!-- Morning Routine -->
         <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-orange-800 mb-4">☀️ Your Daily Routine</h3>
           <div class="grid md:grid-cols-3 gap-4">
-            <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl mb-2">🌅</div><h4 class="font-semibold text-gray-800">Morning</h4><p class="text-sm text-gray-600">You receive an email with daily plan and stores names. Check your weekly_plan sheet for today's visits if needed.</p></div>
+            <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl mb-2">🌅</div><h4 class="font-semibold text-gray-800">Morning</h4><p class="text-sm text-gray-600">Check your weekly_plan sheet for today's visits.</p></div>
             <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl mb-2">🚗</div><h4 class="font-semibold text-gray-800">During Day</h4><p class="text-sm text-gray-600">Follow the route. Log each visit in Slack.</p></div>
             <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl mb-2">🌆</div><h4 class="font-semibold text-gray-800">End of Day</h4><p class="text-sm text-gray-600">Check all visits logged. System updates automatically.</p></div>
           </div>
@@ -268,7 +268,7 @@
           <p class="text-gray-600 mb-4">Post in <strong>#franchise-supermarkets</strong> channel:</p>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 class="font-semibold text-gray-700 mb-2">📝 Standard Format</h4>
+              <h4 class="font-semibold text-gray-700 mb-2">📝 Existing Client</h4>
               <div class="bg-gray-900 text-green-400 rounded-lg p-4 font-mono text-sm">
                 <div>Client: PROXY MEULEBEKE</div>
                 <div>next: february</div>
@@ -285,6 +285,42 @@
                 <div>note: Restocked display</div>
               </div>
               <p class="text-sm text-gray-500 mt-2">Only client and note are required!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW CLIENT Format -->
+        <div class="bg-blue-50 rounded-xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-blue-800 mb-4">🆕 NEW Client Template</h3>
+          <p class="text-gray-600 mb-4">When visiting a <strong>new store for the first time</strong>, use this expanded template:</p>
+          <div class="bg-gray-900 text-green-400 rounded-lg p-4 font-mono text-sm">
+            <div>Client: DELHAIZE BRUGES CENTRUM</div>
+            <div class="text-yellow-400">type: new</div>
+            <div class="text-cyan-400">address: Steenstraat 15, 8000 Brugge, Belgium</div>
+            <div class="text-cyan-400">phone: 050 123 456</div>
+            <div class="text-cyan-400">email: manager@delhaize-bruges.be</div>
+            <div>next: march</div>
+            <div>products_discussed: Wondr, Brauzz</div>
+            <div>refill:</div>
+            <div>note: New store opened last week. Manager interested in eco products.</div>
+          </div>
+          <div class="mt-4 grid md:grid-cols-2 gap-3">
+            <div class="bg-white rounded-lg p-3 shadow-sm">
+              <div class="font-semibold text-blue-700 text-sm">✅ What happens automatically:</div>
+              <ul class="text-xs text-gray-600 mt-1 space-y-1">
+                <li>• Contact created in Odoo</li>
+                <li>• Added to your Excel database</li>
+                <li>• Coordinates fetched for route planning</li>
+                <li>• Visit logged as usual</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-3 shadow-sm">
+              <div class="font-semibold text-yellow-700 text-sm">⚠️ Required for NEW clients:</div>
+              <ul class="text-xs text-gray-600 mt-1 space-y-1">
+                <li>• <code class="bg-gray-100 px-1 rounded">type: new</code> (triggers creation)</li>
+                <li>• <code class="bg-gray-100 px-1 rounded">address:</code> (full address for GPS)</li>
+                <li>• Phone/email are optional but helpful</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -320,7 +356,7 @@
       <div id="phase-urgent" class="phase-content">
         <h2 class="text-2xl font-bold text-gray-800 mb-2">⚠️ Urgent Replanning</h2>
         <p class="text-gray-500 mb-6">When you need to visit a store THIS week</p>
-
+        
         <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-red-800 mb-4">⚠️ When Does Urgent Replan Trigger?</h3>
           <div class="bg-white rounded-lg p-4 mb-4">
@@ -363,7 +399,7 @@
       <div id="phase-rules" class="phase-content">
         <h2 class="text-2xl font-bold text-gray-800 mb-2">📋 Important Rules</h2>
         <p class="text-gray-500 mb-6">Key guidelines for the system</p>
-
+        
         <!-- Store Name Consistency -->
         <div class="bg-red-50 rounded-xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-red-800 mb-4">⚠️ Store Name Consistency</h3>
@@ -425,7 +461,7 @@
       <div id="phase-tips" class="phase-content">
         <h2 class="text-2xl font-bold text-gray-800 mb-2">💡 Tips & Best Practices</h2>
         <p class="text-gray-500 mb-6">Get the most out of the system</p>
-
+        
         <!-- Best Practices -->
         <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-green-800 mb-4">✨ Best Practices</h3>
@@ -452,6 +488,10 @@
             <div class="bg-white rounded-lg p-3 shadow-sm grid md:grid-cols-2 gap-2">
               <div class="flex items-center gap-2"><span class="text-red-500">❌</span><span class="text-gray-600">Multiple stores without "Client:"</span></div>
               <div class="flex items-center gap-2"><span class="text-green-500">✅</span><span class="text-gray-700 font-medium">Start each with "Client:"</span></div>
+            </div>
+            <div class="bg-white rounded-lg p-3 shadow-sm grid md:grid-cols-2 gap-2">
+              <div class="flex items-center gap-2"><span class="text-red-500">❌</span><span class="text-gray-600">New client without "type: new"</span></div>
+              <div class="flex items-center gap-2"><span class="text-green-500">✅</span><span class="text-gray-700 font-medium">Add type: new + address for new stores</span></div>
             </div>
           </div>
         </div>
@@ -482,10 +522,10 @@
       document.querySelectorAll('.phase-content').forEach(el => {
         el.classList.remove('active');
       });
-
+      
       // Show selected phase
       document.getElementById('phase-' + phase).classList.add('active');
-
+      
       // Update tab styles
       document.querySelectorAll('.tab-btn').forEach(btn => {
         if (btn.dataset.phase === phase) {
